@@ -20,7 +20,6 @@ public class Rental {
 		this.cost = cost;
 		this.timeDivider = timeDivider;
 		this.rentalStart = rentalStart;
-		System.out.println("Rental - cost = " + cost + " - timeDivider = " + timeDivider + " - rentalStart = " + rentalStart);
 	}
 	
 	public void setEndDate(long endDate) {
@@ -38,8 +37,6 @@ public class Rental {
 			rentalLength = System.currentTimeMillis() - rentalStart;
 		}
 		
-		System.out.println(rentalLength + " - " + timeDivider);
-
 		if (rentalLength > 0 && rentalLength % timeDivider == 0) {
 			rentalLength = rentalLength / timeDivider;
 		} else {
@@ -48,8 +45,6 @@ public class Rental {
 		
 		result = cost.multiply(new BigDecimal(rentalLength));
 
-		System.out.println(cost + " * " + rentalLength + " = " + result);
-		
 		return result;
 	}
 }
